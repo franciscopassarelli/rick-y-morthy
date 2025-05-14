@@ -28,7 +28,7 @@ Cada microfrontend se encuentra en su carpeta respectiva y puede ser desplegado 
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/rick-microfrontend-app.git
+git clone https://github.com/franciscopassarelli/rick-y-morthy.git
 cd rick-microfrontend-app
 
 # Entrar a cada microfrontend
