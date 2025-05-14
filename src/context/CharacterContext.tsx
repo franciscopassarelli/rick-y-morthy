@@ -34,7 +34,6 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
   const { toast } = useToast();
 
-  // Function to fetch characters
   const loadCharacters = async () => {
     setLoading(true);
     setError(null);
@@ -56,12 +55,10 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // Load characters when page or filters change
   useEffect(() => {
     loadCharacters();
   }, [currentPage, filters]);
 
-  // Load favorites from localStorage on initial load
   useEffect(() => {
     const storedFavorites = localStorage.getItem("rickAndMortyFavorites");
     if (storedFavorites) {
@@ -69,7 +66,6 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  // Save favorites to localStorage when they change
   useEffect(() => {
     localStorage.setItem("rickAndMortyFavorites", JSON.stringify(favorites));
   }, [favorites]);

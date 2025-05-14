@@ -28,7 +28,6 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ open, onClose }) =>
   const fetchEpisodes = async (character: Character) => {
     setLoading(true);
     try {
-      // Extract episode IDs from the URLs
       const episodeIds = character.episode.map(url => {
         const match = url.match(/\/episode\/(\d+)$/);
         return match ? parseInt(match[1], 10) : 0;

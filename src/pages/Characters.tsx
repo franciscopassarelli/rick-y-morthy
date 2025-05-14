@@ -14,7 +14,6 @@ const Characters = () => {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('todos');
   
-  // Handle selecting a character
   const handleCharacterClick = (character) => {
     selectCharacter(character);
     setDetailsOpen(true);
@@ -22,17 +21,14 @@ const Characters = () => {
   
   const { selectCharacter } = useCharacters();
   
-  // Filter characters for favorites tab
   const favoriteCharacters = characters.filter(character => 
     favorites.includes(character.id)
   );
   
-  // Display content based on the active tab
   const getDisplayedCharacters = () => {
     return activeTab === 'favoritos' ? favoriteCharacters : characters;
   };
   
-  // Show loading state
   if (loading && characters.length === 0) {
     return (
       <div className="min-h-screen bg-background p-4 sm:p-8">
